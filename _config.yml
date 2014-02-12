@@ -1,6 +1,6 @@
 permalink: /blog/:year/:month/:day/:title 
 
-exclude: [".rvmrc", ".rbenv-version", "readme.md", "Rakefile", "changelog.md"]
+exclude: [".rvmrc", ".rbenv-version", "readme.md", "Rakefile", "changelog.md", "run.cmd", "Gemfile", "Gemfile.lock"]
 pygments: false
 
 title : Kindohm
