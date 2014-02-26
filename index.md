@@ -7,8 +7,21 @@ title: "Kindohm"
 <p>I use live-coding programming languages to create live, 
 	improvised electronic music.</p>
 
+<p><a href="posts.html">Read the blog</a> for news, gigs, and other info.</p>
+
 <p>Please <a href="contact.html">contact me</a> about booking a performance,
 	demonstration, or talk about live coding.</p>
+
+<hr/>
+
+<h3>Live Coding Performance March 14th</h3>
+
+<p>I'll be performing some live, improvisational sound at 
+	<a href="http://thebeatcoffee.com">The Beat Coffeehouse</a> in uptown
+	Minneapolis on March 14th, 2014 at 7:00 PM.</p>
+
+<p><a href="/posters/2014-03-14-beats-coffee.png">
+	<img src="/posters/2014-03-14-beats-coffee.png" alt="poster" style="width:300px;" /></a></p>
 
 <hr/>
 

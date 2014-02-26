@@ -1,4 +1,4 @@
-permalink: /blog/:year/:month/:day/:title 
+permalink: /posts/:year/:month/:day/:title 
 
 exclude: [".rvmrc", ".rbenv-version", "readme.md", "Rakefile", "changelog.md", "run.cmd", "Gemfile", "Gemfile.lock"]
 pygments: false
