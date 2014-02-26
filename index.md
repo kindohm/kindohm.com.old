@@ -7,7 +7,8 @@ title: "Kindohm"
 <p>I use live-coding programming languages to create live, 
 	improvised electronic music.</p>
 
-<p><a href="posts.html">Read the blog</a> for news, gigs, and other info.</p>
+<p><a href="posts.html">Read the blog</a> for news, gigs, and other info.
+(<a href="http://feeds.feedburner.com/Kindohm">subscribe/rss</a>)</p>
 
 <p>Please <a href="contact.html">contact me</a> about booking a performance,
 	demonstration, or talk about live coding.</p>
