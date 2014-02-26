@@ -3,12 +3,11 @@ layout: default
 title: "Kindohm"
 ---
 
-<p>I use computers to produce humanly-organized sound.</p>
-<p>I use live-coding programming languages to create live, 
-	improvised electronic music.</p>
+<p>I use computers and live coding to create improvised electronic music.</p>
 
-<p><a href="posts.html">Read the blog</a> for news, gigs, and other info.
-(<a href="http://feeds.feedburner.com/Kindohm">subscribe/rss</a>)</p>
+<p><a href="posts.html">Read the blog</a> for news, gigs, and other info
+(<a href="http://feeds.feedburner.com/Kindohm">subscribe/rss</a>). Feel free to
+also read my <a href="http://mikehodnick.com">personal and technical blog</a>.</p>
 
 <p>Please <a href="contact.html">contact me</a> about booking a performance,
 	demonstration, or talk about live coding.</p>
