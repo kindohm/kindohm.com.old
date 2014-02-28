@@ -3,7 +3,7 @@ pygments: true
 permalink: /posts/:year/:month/:day/:title
 rdiscount:
   extensions: [smart]
-exclude: [ Gemfile, Gemfile.lock, gems, _assets, bower_components ]
+exclude: [ Gemfile, Gemfile.lock, gems, _assets, bower_components, run.cmd ]
 title : kindohm
 production_url : http://kindohm.com
 description: "Mike Hodnick's personal web site and blog"
