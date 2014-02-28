@@ -1,15 +1,18 @@
-permalink: /posts/:year/:month/:day/:title 
-
-exclude: [".rvmrc", ".rbenv-version", "readme.md", "Rakefile", "changelog.md", "run.cmd", "Gemfile", "Gemfile.lock"]
-pygments: false
-
-title : Kindohm
-tagline: Kindohm
+markdown: rdiscount
+pygments: true
+permalink: /posts/:year/:month/:day/:title
+rdiscount:
+  extensions: [smart]
+exclude: [ Gemfile, Gemfile.lock, gems, _assets, bower_components ]
+title : kindohm
+production_url : http://kindohm.com
+description: "Mike Hodnick's personal web site and blog"
+disqus_shortname: kindohm
+analytics: UA-3329895-3
+gauges: 
 author :
   name : Mike Hodnick
-  email : kindohm@gmail.com
   github : kindohm
   twitter : kindohm
-  feedburner : Kindohm
-
-production_url : http://kindohm.com
+  email: mike.hodnick@gmail.com
+  linkedin: michaelhodnick

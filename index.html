@@ -1,0 +1,22 @@
+---
+layout: layout
+title: "kindohm - Mike Hodnick"
+cover: /images/pot.jpg
+---
+
+<section class="content">
+
+<h1>Hi, I'm Mike</h1>
+  <p class="lead">I am an independent software developer and a live-coding
+  improvisational electronic music-maker. I write code to build software
+  and to create improvised, humanly organized sound.</p>
+
+  <h1 class="thin">POSTS</h1>
+  <ul class="listing">
+    {% for post in site.posts %}
+    <li>
+      <span>{{ post.date | date: "%B %e, %Y" }}</span> <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
