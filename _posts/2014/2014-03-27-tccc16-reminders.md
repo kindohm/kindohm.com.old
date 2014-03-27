@@ -25,7 +25,7 @@ layout: post
 	Minneapolis, MN 55455<br/>
 </address>
 
-<div style="height:300px;width:400px;overflow:hidden;"><style type="text/css" media="screen">.gm-style img{max-width: none; !important; background:none !important;}.gm-style-iw{height:auto !important; color:#000000; display:block; white-space:nowrap; width:auto !important; line-height:18px; overflow:hidden !important;}</style><script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&sensor=false"></script><div style="height:300px;width:400px;overflow:hidden;"><div id="gmap_canvas2" style="height:300px; width:400px;"></div><a href="http://www.embed-google-map.com/wordpress/" class="map-data">wordpress check this</a></div><script type="text/javascript">function init_map(){var myOptions = {zoom:14,center:new google.maps.LatLng(44.97629,-93.23320999999999),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas2"), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(44.97629, -93.23320999999999)}); infowindow = new google.maps.InfoWindow({content:"<span style='height:auto !important; display:block; white-space:nowrap; overflow:hidden !important;'><strong style='font-weight:400;'>Rapson Hall</strong><br>89 Church St SE<br>55455 Minneapolis</span>" }); google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);}); infowindow.open(map,marker);}google.maps.event.addDomListener (window, "load", init_map);</script></div>
+<div style="height:300px;width:400px;overflow:hidden;margin-bottom: 20px;"><style type="text/css" media="screen">.gm-style img{max-width: none; !important; background:none !important;}.gm-style-iw{height:auto !important; color:#000000; display:block; white-space:nowrap; width:auto !important; line-height:18px; overflow:hidden !important;}</style><script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&sensor=false"></script><div style="height:300px;width:400px;overflow:hidden;"><div id="gmap_canvas2" style="height:300px; width:400px;"></div><a href="http://www.embed-google-map.com/wordpress/" class="map-data">wordpress check this</a></div><script type="text/javascript">function init_map(){var myOptions = {zoom:14,center:new google.maps.LatLng(44.97629,-93.23320999999999),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas2"), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(44.97629, -93.23320999999999)}); infowindow = new google.maps.InfoWindow({content:"<span style='height:auto !important; display:block; white-space:nowrap; overflow:hidden !important;'><strong style='font-weight:400;'>Rapson Hall</strong><br>89 Church St SE<br>55455 Minneapolis</span>" }); google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);}); infowindow.open(map,marker);}google.maps.event.addDomListener (window, "load", init_map);</script></div>
 
 <p>We encourage you to familiarize yourself with the locations of Keller and
 	Rapson on the U of M campus beforehand.</p>
@@ -60,10 +60,8 @@ layout: post
 <p>Assorted pastries and coffee will be available in the morning before the 
 	start of the opening remarks.</p>
 
-<h3>Lunch is not provided!</h3>
-<p>Our budget changes with each event. For TCCC16 <strong>lunch will not be 
-	provided</strong>. There are a number of nearby places within walking
-	distance from Keller and Rapson Halls to grab a quick bite to eat.</p>
+<h3>Lunch is provided!</h3>
+<p>Like our last event, we will be ordering in pizza for all attendees for lunch.</p>
 
 <h3>Dress Comfortably</h3>
 <p>We have little control over the air conditioning in Keller Hall. 
