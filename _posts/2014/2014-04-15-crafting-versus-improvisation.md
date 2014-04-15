@@ -60,3 +60,4 @@ You really don't even need a single audience member for these ideas to be
 effective. Just knowing that your content is (or will be) out in the wild is enough to
 change your mindset while practicing. 
 
+
