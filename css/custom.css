@@ -23,6 +23,10 @@ article img, .content img {
     margin-bottom: 20px;
 }
 
+article p{
+    margin-bottom: 25px;
+}
+
 article.about p, .content.about p, article.error, .content.error {
 text-align: left;
 margin-bottom: 20px;
@@ -36,4 +40,8 @@ footer{
 
 blockquote{
     font-style: italic;
+}
+
+.twitter-tweet{
+    margin-bottom: 35px !important;
 }
