@@ -1,25 +1,160 @@
----
-layout: layout
-title: "kindohm - Mike Hodnick"
-cover: /images/think.jpg
----
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mike Hodnick - live coded music and web programming</title>
+  <meta name="description" content="Mike Hodnick's personal web site.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<section class="content">
+  <link rel="icon" href="favicon.png" />
+  <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png" />
+  <link rel="stylesheet" href="site/style.css"/>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
 
-<h1>Hi, I'm Mike</h1>
-  <p class="lead">I'm a programmer, and I also perform live-coded, improvised, 
-    electronic music. I write code both to build things for others and to
-    build live sound for myself and the audience to enjoy.</p>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+  <script src="/js/plangular.js"></script>
 
-  <p class="lead">Are you interested in live-coded music? 
-   Please read the <a href="/music">music page</a> or <a href="/contact">contact me</a>.
+</head>
+<body ng-app="plangular" class="">
 
-  <h1 class="thin">POSTS</h1>
-  <ul class="listing">
-    {% for post in site.posts %}
-    <li>
-      <span>{{ post.date | date: "%B %e, %Y" }}</span> <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-    {% endfor %}
-  </ul>
-</section>
+<header plangular data-src="http://soundcloud.com/365tidalpatterns/pattern-220" class="relative h100 xmin-h100 xtable bg-dark-gray light-gray">
+  <div class="absolute t0 r0 b0 l0 glow-wrap" ng-class="{ 'geo-glow': player.playing == track }">
+    <img src="site/waveform-new.svg" class="absolute waveform waveform-large"/>
+  </div>
+  <div class="table min-h100 bg-dark-gray">
+    <div class="relative table-cell center p-responsive">
+      <a href="" ng-click="player.play(track)" class="h1 plangular-button mb1 button-blue rounded">
+        <svg class="icon geo-dark-gray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+          <polygon points="2,2 30,16 2,30"/>
+        </svg>
+      </a>
+      <h1 class="h1">kindohm == Mike Hodnick</h1>
+      <p class="h3">Live-coded music. Oh, and web programming too.</p>
+      <div class="p1">
+        <a href="/blog" class="button button-blue mr1">Blog</a>
+        <a href="/contact" class="button button-blue mr1">Contact</a>
+      </div>
+    </div>
+  </div>
+
+</header>
+
+
+<main class="py-responsive">
+
+  <header class="measure-wide wrap px-responsive">
+    <h2 class="h2 mb0">Live Coding</h2>
+    <p class="h3 mb2">I write live code to make music. Here are some recordings:</p>
+  </header>
+
+
+  <section plangular data-src="http://soundcloud.com/kindohm/sets/live-coded-music" class="measure-wide wrap mb4 oh bg-dark-gray rounded">
+    <div class="p-responsive mobile-center bg-center bg-cover blue shadow-darken" style="background-image: url(images/keyboard.jpg)">
+      <p class="p mb0">{{ playlist.user.username }}</p>
+      <h1 class="h1">{{ playlist.title }}</h1>
+      <div class="clearfix">
+        <div class="left mr1 mobile-block">
+          <a href="" ng-click="player.previous(playlist)" class="button button-geo white">
+            <div plangular-icon="previous" class="geo-24 geo-white"></div>
+          </a>
+          <a href="" ng-click="player.playPlaylist(playlist)" ng-hide="player.tracks == playlist.tracks && player.playing" class="button button-geo anim-popin">
+            <div plangular-icon="play" class="geo-24 geo-white"></div>
+          </a>
+          <a href="" ng-click="player.pause()" ng-show="player.tracks == playlist.tracks && player.playing" class="button button-geo white anim-popin">
+            <div plangular-icon="pause" class="geo-24 geo-white"></div>
+          </a>
+          <a href="" ng-click="player.next(playlist)" class="button button-geo white">
+            <div plangular-icon="next" class="geo-24 geo-white"></div>
+          </a>
+        </div>
+        <div class="oh mobile-block">
+          <progress value="{{ currentTime / duration}}" ng-click="seekTo($event)" class="mt1 progress progress-white w100">{{ currentTime / duration}}</progress>
+          <small class="left">{{ currentTime | playTime }}</small>
+          <small class="right">{{ duration | playTime }}</small>
+        </div>
+      </div>
+    </div>
+    <div class="p1 clearfix">
+      <ol class="ol mid-gray">
+        <li ng-repeat="track in playlist.tracks" class="ml2"><a href="" ng-click="player.play(playlist.tracks, $index)" class="block white" ng-class="{ 'white': (player.playing || player.paused) != track, 'blue': (player.playing || player.paused) == track }">
+          <strong>{{ track.user.username }}</strong> - {{ track.title }}
+        </a></li>
+      </ol>
+      <a ng-href="{{ playlist.permalink_url }}" target="_blank" class="right small mid-gray">View on SoundCloud</a>
+    </div>
+  </section>
+
+  <section class="measure-wide wrap px-responsive">
+    <h1 class="h2 mb0">Live Coding Patterns</h1>
+    <p class="h3 mb2">In 2014, I'm making a sound pattern a day with <a href="//yaxu.org/tidal">Tidal</a>. Listen:</p>
+  </section>
+
+
+  <section plangular data-src="http://soundcloud.com/kindohm/sets/tidal-patterns" class="measure-wide wrap mb4 oh bg-dark-gray rounded">
+    <div class="p-responsive mobile-center bg-center bg-cover blue shadow-darken" style="background-image: url(images/think.jpg)">
+      <p class="p mb0">{{ playlist.user.username }}</p>
+      <h1 class="h1">{{ playlist.title }}</h1>
+      <div class="clearfix">
+        <div class="left mr1 mobile-block">
+          <a href="" ng-click="player.previous(playlist)" class="button button-geo white">
+            <div plangular-icon="previous" class="geo-24 geo-white"></div>
+          </a>
+          <a href="" ng-click="player.playPlaylist(playlist)" ng-hide="player.tracks == playlist.tracks && player.playing" class="button button-geo anim-popin">
+            <div plangular-icon="play" class="geo-24 geo-white"></div>
+          </a>
+          <a href="" ng-click="player.pause()" ng-show="player.tracks == playlist.tracks && player.playing" class="button button-geo white anim-popin">
+            <div plangular-icon="pause" class="geo-24 geo-white"></div>
+          </a>
+          <a href="" ng-click="player.next(playlist)" class="button button-geo white">
+            <div plangular-icon="next" class="geo-24 geo-white"></div>
+          </a>
+        </div>
+        <div class="oh mobile-block">
+          <progress value="{{ currentTime / duration}}" ng-click="seekTo($event)" class="mt1 progress progress-white w100">{{ currentTime / duration}}</progress>
+          <small class="left">{{ currentTime | playTime }}</small>
+          <small class="right">{{ duration | playTime }}</small>
+        </div>
+      </div>
+    </div>
+    <div class="p1 clearfix">
+      <ol class="ol mid-gray">
+        <li ng-repeat="track in playlist.tracks" class="ml2"><a href="" ng-click="player.play(playlist.tracks, $index)" class="block white" ng-class="{ 'white': (player.playing || player.paused) != track, 'blue': (player.playing || player.paused) == track }">
+          <strong>{{ track.user.username }}</strong> - {{ track.title }}
+        </a></li>
+      </ol>
+      <a ng-href="{{ playlist.permalink_url }}" target="_blank" class="right small mid-gray">View on SoundCloud</a>
+    </div>
+  </section>
+
+
+  <footer class="relative mb4">
+
+    <div class="relative measure-wide wrap px-responsive mb4">
+      <h1 class="h2 mb0">Oh yeah, programming too</h1>
+      <p class="h3 mb1">I'm an independent web developer. I work with open-source technologies on both
+        front-end and .NET stacks.</p>
+      <a href="//linkedin.com/in/michaelhodnick" class="p button button-big button-blue">Profile on LinkedIn</a>
+    </div>
+
+    <div class="relative measure-wide wrap px-responsive">
+      <h1 class="h2 mb0">Contact Me</h1>
+      <p class="h3 mb1">You can reach me on a variety of services, or through the handy contact form below.</p>
+      <a href="http://twitter.com/kindohm" class="p button button-big button-blue">Twitter</a>
+      <a href="http://github.com/kindohm" class="p button button-big button-blue">Github</a>
+      <a href="http://soundcloud.com/kindohm" class="p button button-big button-blue mb2">Soundcloud</a>
+
+      <script src="http://www.emailmeform.com/builder/forms/jsform/08dacv1jcTCI" type="text/javascript"> </script>
+
+    </div>
+  </footer>
+
+</main>
+
+<footer class="px-responsive py1 measure-wide wrap">
+  <p class="center">Unauthorized duplication may result in sudden death or dismemberment. <br/>
+    Powered by SoundCloud and <a href="//github.com/jxnblk/plangular">Plangular</a>. 
+    Web design by <a href="http://jxnblk.com">Jxnblk</a>.</p>
+</footer>
+
+</body>
+</html>

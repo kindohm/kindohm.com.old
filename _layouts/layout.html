@@ -22,7 +22,6 @@
 </head>
 
 <body>
-  {% include navbar.html %}
 
   {% if page.cover %}
   <div class="cover hidden-xs" style="background-image: url({{ page.cover }})"></div>
@@ -32,11 +31,7 @@
     {{ content }}
   </div>
 
-  {% include footer.html %}
-  {% include analytics.html %}
 </body>
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="/js/up.min.js"></script>
 
 {% if page.customjs %}
 {% for js in page.customjs %}
