@@ -17,20 +17,13 @@
 </head>
 <body ng-app="plangular" class="">
 
-<header plangular data-src="http://soundcloud.com/365tidalpatterns/pattern-220" class="relative h100 xmin-h100 xtable bg-dark-gray light-gray">
-  <div class="absolute t0 r0 b0 l0 glow-wrap" ng-class="{ 'geo-glow': player.playing == track }">
-    <img src="site/waveform-new.svg" class="absolute waveform waveform-large"/>
-  </div>
+<header class="relative h100 xmin-h100 xtable bg-dark-gray light-gray">
   <div class="table min-h100 bg-dark-gray">
     <div class="relative table-cell center p-responsive">
-      <a href="" ng-click="player.play(track)" class="h1 plangular-button mb1 button-blue rounded">
-        <svg class="icon geo-dark-gray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-          <polygon points="2,2 30,16 2,30"/>
-        </svg>
-      </a>
-      <h1 class="h1">kindohm === Mike Hodnick</h1>
+      <h1 class="h1">kindohm. Mike Hodnick.</h1>
       <p class="h3">Live-coded music. Oh, and web programming too.</p>
       <div class="p1">
+        <a href="#livecoding" class="button button-blue mr1">Live Coding</a>
         <a href="/blog.html" class="button button-blue mr1">Blog</a>
         <a href="#contact" class="button button-blue mr1">Contact</a>
       </div>
@@ -42,6 +35,7 @@
 <main class="py-responsive">
 
   <header class="measure-wide wrap px-responsive">
+    <a name="livecoding"></a>
     <h2 class="h2 mb0">Live Coding</h2>
     <p class="h3 mb2">I write live code to make improvised electronic music. Here are some recordings:</p>
   </header>
@@ -91,6 +85,83 @@
 
   <section plangular data-src="http://soundcloud.com/kindohm/sets/tidal-patterns" class="measure-wide wrap mb4 oh bg-dark-gray rounded">
     <div class="p-responsive mobile-center bg-center bg-cover blue shadow-darken" style="background-image: url(images/think.jpg)">
+      <p class="p mb0">{{ playlist.user.username }}</p>
+      <h1 class="h1">{{ playlist.title }}</h1>
+      <div class="clearfix">
+        <div class="left mr1 mobile-block">
+          <a href="" ng-click="player.previous(playlist)" class="button button-geo white">
+            <div plangular-icon="previous" class="geo-24 geo-white"></div>
+          </a>
+          <a href="" ng-click="player.playPlaylist(playlist)" ng-hide="player.tracks == playlist.tracks && player.playing" class="button button-geo anim-popin">
+            <div plangular-icon="play" class="geo-24 geo-white"></div>
+          </a>
+          <a href="" ng-click="player.pause()" ng-show="player.tracks == playlist.tracks && player.playing" class="button button-geo white anim-popin">
+            <div plangular-icon="pause" class="geo-24 geo-white"></div>
+          </a>
+          <a href="" ng-click="player.next(playlist)" class="button button-geo white">
+            <div plangular-icon="next" class="geo-24 geo-white"></div>
+          </a>
+        </div>
+        <div class="oh mobile-block">
+          <progress value="{{ currentTime / duration}}" ng-click="seekTo($event)" class="mt1 progress progress-white w100">{{ currentTime / duration}}</progress>
+          <small class="left">{{ currentTime | playTime }}</small>
+          <small class="right">{{ duration | playTime }}</small>
+        </div>
+      </div>
+    </div>
+    <div class="p1 clearfix">
+      <ol class="ol mid-gray">
+        <li ng-repeat="track in playlist.tracks" class="ml2"><a href="" ng-click="player.play(playlist.tracks, $index)" class="block white" ng-class="{ 'white': (player.playing || player.paused) != track, 'blue': (player.playing || player.paused) == track }">
+          <strong>{{ track.user.username }}</strong> - {{ track.title }}
+        </a></li>
+      </ol>
+      <a ng-href="{{ playlist.permalink_url }}" target="_blank" class="right small mid-gray">View on SoundCloud</a>
+    </div>
+  </section>
+
+  <section class="measure-wide wrap px-responsive">
+    <h1 class="h2 mb0">Rendered Electronic Music</h1>
+    <p class="h3 mb2">I also like to make un-improvised electronic music. This is just a hobby.</p>
+  </section>
+
+  <section plangular data-src="https://soundcloud.com/kindohm/sets/partial-line-segments" class="measure-wide wrap mb4 oh bg-dark-gray rounded">
+    <div class="p-responsive mobile-center bg-center bg-cover blue shadow-darken" style="background-image: url(images/happy.jpg)">
+      <p class="p mb0">{{ playlist.user.username }}</p>
+      <h1 class="h1">{{ playlist.title }}</h1>
+      <div class="clearfix">
+        <div class="left mr1 mobile-block">
+          <a href="" ng-click="player.previous(playlist)" class="button button-geo white">
+            <div plangular-icon="previous" class="geo-24 geo-white"></div>
+          </a>
+          <a href="" ng-click="player.playPlaylist(playlist)" ng-hide="player.tracks == playlist.tracks && player.playing" class="button button-geo anim-popin">
+            <div plangular-icon="play" class="geo-24 geo-white"></div>
+          </a>
+          <a href="" ng-click="player.pause()" ng-show="player.tracks == playlist.tracks && player.playing" class="button button-geo white anim-popin">
+            <div plangular-icon="pause" class="geo-24 geo-white"></div>
+          </a>
+          <a href="" ng-click="player.next(playlist)" class="button button-geo white">
+            <div plangular-icon="next" class="geo-24 geo-white"></div>
+          </a>
+        </div>
+        <div class="oh mobile-block">
+          <progress value="{{ currentTime / duration}}" ng-click="seekTo($event)" class="mt1 progress progress-white w100">{{ currentTime / duration}}</progress>
+          <small class="left">{{ currentTime | playTime }}</small>
+          <small class="right">{{ duration | playTime }}</small>
+        </div>
+      </div>
+    </div>
+    <div class="p1 clearfix">
+      <ol class="ol mid-gray">
+        <li ng-repeat="track in playlist.tracks" class="ml2"><a href="" ng-click="player.play(playlist.tracks, $index)" class="block white" ng-class="{ 'white': (player.playing || player.paused) != track, 'blue': (player.playing || player.paused) == track }">
+          <strong>{{ track.user.username }}</strong> - {{ track.title }}
+        </a></li>
+      </ol>
+      <a ng-href="{{ playlist.permalink_url }}" target="_blank" class="right small mid-gray">View on SoundCloud</a>
+    </div>
+  </section>
+
+  <section plangular data-src="https://soundcloud.com/kindohm/sets/robots-stole-my-computer" class="measure-wide wrap mb4 oh bg-dark-gray rounded">
+    <div class="p-responsive mobile-center bg-center bg-cover blue shadow-darken" style="background-image: url(images/wires-2-blur.jpg)">
       <p class="p mb0">{{ playlist.user.username }}</p>
       <h1 class="h1">{{ playlist.title }}</h1>
       <div class="clearfix">

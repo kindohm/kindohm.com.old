@@ -5,11 +5,12 @@ title: "Inaugural Live Coding Performance March 14th 2014 in Minneapolis"
 
 <div class="row">
 
-	<div class="col-sm-3 hidden-xs"><a href="/posters/2014-03-14-beats-coffee.png">
-		<img src="/posters/2014-03-14-beats-coffee.png" alt="poster" /></a></div>
+	<div class="col-sm-3 hidden-xs">
+	</div>
 
 	<div class="col-sm-9">
-	<p>
+	<p><a href="/posters/2014-03-14-beats-coffee.png">
+		<img src="/posters/2014-03-14-beats-coffee.png" alt="poster" style="width: 300px;margin: 5px;float: right;" /></a>
 		I'll be performing some live-coded, improvisational sound with a computer at 
 		<a href="http://thebeatcoffee.com">The Beat Coffeehouse</a> in uptown
 		Minneapolis on March 14th, 2014 at 7:00 PM. As far as I know, this will be 
