@@ -1,35 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8">
   <title>{{ page.title }}</title>
+  <meta name="description" content="Mike Hodnick's personal web site.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="author" content="{{ site.author.name }}" />
-  <meta name="description" content="{{ site.description }}" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
-
-  <link href="/css/up.css" rel="stylesheet">
-  <link href="/css/custom.css" rel="stylesheet">
-
-  <!--[if lt IE 9]>
-  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-
-  <link rel="icon" href="/favicon-32.png">
+  <link rel="icon" href="favicon.png" />
+  <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png" />
+  <link rel="stylesheet" href="/site/style.css"/>
+  <link rel="stylesheet" href="/site/custom.css"/>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
 
 </head>
+<body class="">
 
-<body>
-
-  {% if page.cover %}
-  <div class="cover hidden-xs" style="background-image: url({{ page.cover }})"></div>
-  {% endif %}
-
-  <div class="container">
-    {{ content }}
+<header plangular data-src="http://soundcloud.com/365tidalpatterns/pattern-220" class="relative xmin-h100 xtable bg-dark-gray light-gray">
+  <div class="table min-h100 bg-dark-gray">
+    <div class="relative table-cell center p-responsive">
+      <h1 class="h1">Mike Hodnick's Blog</h1>
+      <p class="h3">Live-coded music. Oh, and web programming too.</p>
+      <div class="p1">
+        <a href="/" class="button button-blue mr1">Home</a>
+        <a href="/blog.html" class="button button-blue mr1">Blog</a>
+        <a href="/contact" class="button button-blue mr1">Contact</a>
+      </div>
+    </div>
   </div>
+
+</header>
+
+
+<main class="py-responsive">
+  <section class="measure-wide wrap px-responsive">
+{{ content }}
+  </section>
+
+
+</main>
+
+<footer class="px-responsive py1 measure-wide wrap">
+  <hr/>
+  <p class="center"><small>Unauthorized duplication may result in sudden death or dismemberment.
+    Web design by <a href="http://jxnblk.com">Jxnblk</a>.</small></p>
+</footer>
 
 </body>
 
@@ -39,6 +53,4 @@
 {% endfor %}
 {% endif %}
 
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300'
-  rel='stylesheet' type='text/css'>
 </html>

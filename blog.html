@@ -1,0 +1,12 @@
+---
+layout: layout
+title: "Mike Hodnick's Blog"
+---
+
+<h1>Posts</h1>
+
+{% for post in site.posts %}
+<article class="post">
+  <h3><span>{{ post.date | date: '%Y-%m-%d' }}</span> - <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
+</article>
+{% endfor %}
