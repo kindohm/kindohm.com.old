@@ -5,10 +5,12 @@ title: "Mike Hodnick's Blog"
 
 <h1>Posts</h1>
 
+<p><a href="http://feeds.feedburner.com/Kindohm">rss feed</a></p>
+
 <p>Here are my recent posts. I also have an <a href="/blog/">ancient archive of old posts</a>.</p>
 
 {% for post in site.posts %}
 <article class="post">
-  <h3><span>{{ post.date | date: '%Y-%m-%d' }}</span> - <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
+  <h4><span>{{ post.date | date: '%Y-%m-%d' }}</span> - <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h4>
 </article>
 {% endfor %}
