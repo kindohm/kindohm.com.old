@@ -2,57 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>{{ page.title }}</title>
+  <title>Mike Hodnick - live coded music</title>
   <meta name="description" content="Mike Hodnick - live coded music and web programming">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="icon" href="favicon.png" />
   <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png" />
-  <link rel="stylesheet" href="/site/basscss.min.css"/>
-  <link rel="stylesheet" href="/site/style.css"/>
-  <link rel="stylesheet" href="/site/custom.css"/>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
-
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro:400|Open+Sans:400,400italic,600" rel="stylesheet">
+  <link rel="stylesheet" href="/css/basscss.min.css"/>
+  <link rel="stylesheet" href="/css/custom.css"/>
 </head>
-<body class="">
+<body ng-app="plangular" class="">
 
-<header plangular data-src="http://soundcloud.com/365tidalpatterns/pattern-220" class="relative xmin-h100 xtable bg-dark-gray light-gray">
-  <div class="table min-h100 bg-dark-gray">
-    <div class="relative table-cell center p-responsive">
+<header>
+  <div class="bg-dark-gray shadow-darkener">
+    <div class="container white pt3 pb3 center">
       <h1 class="h1">kindohm</h1>
-      <p><small>a.k.a. Mike Hodnick</small></p>
-      <div class="p1">
-        <a href="/" class="button button-blue mr1">Home</a>
-        <a href="/blog.html" class="button button-blue mr1">Blog</a>
-        <a href="/events" class="button button-blue mr1">Events</a>
-        <a href="/contact" class="button button-blue mr1">Contact</a>
-      </div>
+      <p>a.k.a. Mike Hodnick</p>
+      <p class="h3">Live-coded, algorithmic, electronic music.</p>
+      <p>Oh and web programming too.</p>
+    </div>
+    <div class="nav mobile-nav-table nav-table-fixed center full-width nav-dark bg-dark-gray">
+      <a href="/">Home</a>
+      <a href="/events">Events</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/contact">Contact</a>
     </div>
   </div>
-
 </header>
 
+<main>
 
-<main class="py-responsive">
-  <section class="measure-wide wrap px-responsive">
 {{ content }}
-  </section>
-
 
 </main>
 
-<footer class="px-responsive py1 measure-wide wrap">
-  <hr/>
-  <p class="center"><small>Unauthorized duplication may result in sudden death or dismemberment.
-    Web design by <a href="http://jxnblk.com">Jxnblk</a>.</small></p>
+<footer class="mb4">
+  <div class="container">
+    <hr/>
+    <p class="center"><small>Unauthorized duplication may result in sudden death or dismemberment.<br/>
+      Audio powered by SoundCloud and <a href="//github.com/jxnblk/plangular">Plangular</a>. 
+      Layout and style by <a href="http://www.basscss.com/">Basscss</a>.</small></p>
+  </div>
 </footer>
 
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+<script src="/js/plangular.js"></script>
+<script src="/js/geomicons.min.js"></script>
+
 </body>
-
-{% if page.customjs %}
-{% for js in page.customjs %}
-<script src="{{ js }}"></script>
-{% endfor %}
-{% endif %}
-
 </html>

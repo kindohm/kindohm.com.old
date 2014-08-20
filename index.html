@@ -1,34 +1,10 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Mike Hodnick - live coded music</title>
-  <meta name="description" content="Mike Hodnick - live coded music and web programming">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="icon" href="favicon.png" />
-  <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png" />
-  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro:400|Open+Sans:400,400italic,600" rel="stylesheet">
-  <link rel="stylesheet" href="/css/basscss.min.css"/>
-  <link rel="stylesheet" href="/css/custom.css"/>
-</head>
-<body ng-app="plangular">
-
-<header>
-  <div class="bg-dark-gray">
-    <div class="container white py4 center">
-      <h1 class="h1">kindohm</h1>
-      <p>a.k.a. Mike Hodnick</p>
-      <p class="h3">Live-coded, algorithmic, electronic music.</p>
-    </div>
-  </div>
-</header>
-
-<main>
-
+---
+layout: layout
+---
+<div>
   <section>
     <div class="container mt4 mb4 center">
-      <h2 class="h1">Live Coding</h2>
+      <h2 class="h2">Live Coding</h2>
       <p>I write code live to make improvised electronic music. I project my screen as I perform.</p>
       <div class="center video-container">
         <iframe width="640" height="360" src="//www.youtube.com/embed/Noq5WBG8qoU?list=PLKgxw7RG3hcRJ0JoC_2eYYg99KFcjItvc" frameborder="0" allowfullscreen></iframe>    
@@ -129,16 +105,16 @@
             </a>
           </div>
           <div class="oh">
-            <progress value="{{ currentTime / duration}}" ng-click="seekTo($event)" class="progress-white full-width bg-light-gray">{{ currentTime / duration}}</progress>
+            <progress value='{{ "{{ currentTime / duration "}} }}' ng-click="seekTo($event)" class="progress-blue-on-white full-width bg-light-gray">{{ "{{ currentTime / duration "}} }}</progress>
             <small class="left">{{ currentTime | playTime }}</small>
             <small class="right">{{ duration | playTime }}</small>
           </div>
         </div>
       </div>
       <div class="clearfix">
-        <ol class="bg-blue p2">
-          <li ng-repeat="track in playlist.tracks" class="ml2"><a href="" ng-click="player.play(playlist.tracks, $index)" class="block white" ng-class="{ 'white': (player.playing || player.paused) != track, 'dark-gray': (player.playing || player.paused) == track }">
-            <strong>{{ track.user.username }}</strong> - {{ track.title }}
+        <ol class="bg-blue p3">
+          <li ng-repeat="track in playlist.tracks" class="ml2 mb1"><a href="" ng-click="player.play(playlist.tracks, $index)" class="block white" ng-class="{ 'white': (player.playing || player.paused) != track, 'dark-gray': (player.playing || player.paused) == track }">
+            <strong>{{ "{{ track.user.username ""}} }}</strong> - {{ "{{ track.title "}} }}
           </a></li>
         </ol>
         <a ng-href="{{ playlist.permalink_url }}" target="_blank" class="right small mid-gray">View on SoundCloud</a>
@@ -170,16 +146,17 @@
             </a>
           </div>
           <div class="oh">
-            <progress value="{{ currentTime / duration}}" ng-click="seekTo($event)" class="progress-white full-width bg-light-gray">{{ currentTime / duration}}</progress>
+            <progress value='{{ "{{ currentTime / duration "}} }}' ng-click="seekTo($event)" class="progress-blue-on-white full-width bg-light-gray">{{ "{{ currentTime / duration "}} }}</progress>
             <small class="left">{{ currentTime | playTime }}</small>
             <small class="right">{{ duration | playTime }}</small>
           </div>
         </div>
       </div>
+      <!-- xxx -->
       <div class="clearfix">
-        <ol class="bg-light-gray p2">
-          <li ng-repeat="track in playlist.tracks" class="ml2"><a href="" ng-click="player.play(playlist.tracks, $index)" class="block dark-gray" ng-class="{ 'white': (player.playing || player.paused) != track, 'blue': (player.playing || player.paused) == track }">
-            <strong>{{ track.user.username }}</strong> - {{ track.title }}
+        <ol class="bg-light-gray p3">
+          <li ng-repeat="track in playlist.tracks" class="ml2 mb1"><a href="" ng-click="player.play(playlist.tracks, $index)" class="block dark-gray" ng-class="{ 'white': (player.playing || player.paused) != track, 'blue': (player.playing || player.paused) == track }">
+            <strong>{{ "{{ track.user.username ""}} }}</strong> - {{ "{{ track.title "}} }}
           </a></li>
         </ol>
         <a ng-href="{{ playlist.permalink_url }}" target="_blank" class="right small mid-gray">View on SoundCloud</a>
@@ -188,45 +165,37 @@
   </section>
 
 
-  <section>
+  <section class="bg-dark-gray white p4">
 
-    <div>
+    <div class="container center">
       <h2 class="h2">Oh yeah, programming too</h2>
       <p>I'm an independent, full-stack web developer. I work with open-source technologies on
         front-end, .NET, and node.js stacks.</p>
-      <a href="//linkedin.com/in/michaelhodnick" class="p button button-big button-blue">Profile on LinkedIn</a>
+      <a href="//linkedin.com/in/michaelhodnick" class="p">Profile on LinkedIn</a>
     </div>
 
-    <div>
+  </section>
+
+  <section class="bg-light-gray p4">
+    <div class="container center">
       <h2 class="h2">Blog</h2>
       <p>I maintain a technical blog. I write about live coding and web programming.</p>
-      <a href="/blog.html" class="p button button-big button-blue">Read the Blog</a>
-    </div>
-
-    <div>
-      <a name="contact"></a>
-      <h2 class="h2">Contact Me</h2>
-      <p>You can reach me on a variety of services, or through the handy contact form below.</p>
-      <a href="http://twitter.com/kindohm" class="p button button-big button-blue">Twitter</a>
-      <a href="http://github.com/kindohm" class="p button button-big button-blue">Github</a>
-      <a href="http://soundcloud.com/kindohm" class="p button button-big button-blue mb2">Soundcloud</a>
-
-      <script src="http://www.emailmeform.com/builder/forms/jsform/08dacv1jcTCI" type="text/javascript"> </script>
-
+      <a href="/blog.html" class="p">Read the Blog</a>
     </div>
   </section>
 
-</main>
+  <section class="p4">
+    <div class="container center">
+      <a name="contact"></a>
+      <h2 class="h2">Contact Me</h2>
+      <p>You can reach me on a variety of services, or through the handy contact form below.</p>
+      <a href="http://facebook.com/mike.hodnick" class="p">Facebook</a>
+      <a href="https://plus.google.com/100816691627215949415">Google+</a>
+      <a href="http://twitter.com/kindohm" class="p">Twitter</a>
+      <a href="http://github.com/kindohm" class="p">Github</a>
+      <a href="http://soundcloud.com/kindohm" class="p">Soundcloud</a>
 
-<footer>
-  <p class="center">Unauthorized duplication may result in sudden death or dismemberment. <br/>
-    Powered by SoundCloud and <a href="//github.com/jxnblk/plangular">Plangular</a>. 
-    Web design by <a href="http://jxnblk.com">Jxnblk</a>.</p>
-</footer>
-
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
-<script src="/js/plangular.js"></script>
-<script src="/js/geomicons.min.js"></script>
-
-</body>
-</html>
+      <script src="http://www.emailmeform.com/builder/forms/jsform/08dacv1jcTCI" type="text/javascript"> </script>
+    </div>
+  </section>
+</div>

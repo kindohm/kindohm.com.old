@@ -3,14 +3,16 @@ layout: layout
 title: "Mike Hodnick's Blog"
 ---
 
-<h1>Posts</h1>
+<div class="container py3">
+	<h2 class="h2">Posts</h2>
 
-<p><a href="http://feeds.feedburner.com/Kindohm">rss feed</a></p>
+	<p><a href="http://feeds.feedburner.com/Kindohm">rss feed</a></p>
 
-<p>Here are my recent posts. I also have an <a href="/blog/">ancient archive of old posts</a>.</p>
+	<p>Here are my recent posts. I also have an <a href="/blog/">ancient archive of old posts</a>.</p>
 
-{% for post in site.posts %}
-<article class="post">
-  <h4><span>{{ post.date | date: '%Y-%m-%d' }}</span> - <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h4>
-</article>
-{% endfor %}
+	{% for post in site.posts %}
+	<article class="post">
+	  <h4><span>{{ post.date | date: '%Y-%m-%d' }}</span> - <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h4>
+	</article>
+	{% endfor %}
+</div>
