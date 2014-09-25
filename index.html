@@ -1,20 +1,32 @@
 ---
 layout: layout
 ---
-<div ng-app="plangular">
+<div>
   <section>
-    <div class="container mt4 mb4 center">
-      <h2 class="h2">Live Coding</h2>
+    <div class="container">
+      <h2>Live Coding</h2>
       <p>I write code live to make improvised electronic music. I project my screen as I perform.</p>
-      <div class="center video-container">
-        <iframe width="640" height="360" src="//www.youtube.com/embed/Noq5WBG8qoU?list=PLKgxw7RG3hcRJ0JoC_2eYYg99KFcjItvc" frameborder="0" allowfullscreen></iframe>    
-      </div>
+
+
+  <div plangular="https://soundcloud.com/365tidalpatterns/pattern-364">
+    
+    <h1>{{ "{{user.username "}} }}</h1>
+    <h1>{{ "{{ title "}} }}</h1>
+    <button ng-click="play()" ng-if="player.playing != track">Play</button>
+    <button ng-click="pause()" ng-if="player.playing == track">Pause</button>
+    <div>
+<progress style="width: 100%;background-color: black;color: green;" value="{{ currentTime / duration }}">{{ "{{ currentTime / duration "}} }}</progress>
+</div>
+  </div>
+
+
+
     </div>
   </section>
 
   <section class="bg-light-gray">
-    <div class="container py4">
-      <h2 class="h2">What is live-coded, algorithmic music?</h2>
+    <div class="container">
+      <h2>What is live-coded, algorithmic music?</h2>
       <p class="p">Live coders are hybrid programmer-musicians who write improvised code
         in real time to create music. They project their screen to the audience, resuling in a raw and genuine musical
         performance.</p>
@@ -26,11 +38,11 @@ layout: layout
   </section>
 
   <section>
-    <div class="container py4">
-      <h2 class="h2 center">Upcoming Events</h2>
+    <div class="container">
+      <h2>Upcoming Events</h2>
 
-      <table class="table-reset table-light mb2 mt3">
-        <thead class="bg-light-gray">
+      <table>
+        <thead>
           <tr>
             <th>Date</th>
             <th>Time</th>
@@ -54,7 +66,7 @@ layout: layout
 
   <section class="bg-dark-gray white">
     <div class="container py4 center">
-      <h2 class="h2">Press and Praise</h2>
+      <h2>Press and Praise</h2>
       <p>Perfect Porridge: 
         <a href="http://perfectporridge.com/2014/05/28/livecodedaudio/">Decoding Algoraves: 
           Live Coded Audio coming to Minneapolis</a>.</p>
@@ -63,7 +75,7 @@ layout: layout
         <a href="http://sdt.bz/content/article.aspx?ArticleID=70098&page=1">Algoraves: 
           Dancing to live coding</a></p>
 
-      <div class="mt3 center">
+      <div>
         <p><em>"was super rad and a lot of folks dug it"</em><br/>
           - <a href="http://bedlamtheatre.org/bedlam-lowertown/">Bedlam Lowertown</a></p>
 
@@ -76,93 +88,11 @@ layout: layout
     </div>
   </section>
 
-  <section plangular data-src="http://soundcloud.com/kindohm/sets/live-coded-music">
-    <div class="container py4">
-      <h2 class="h2">Recordings</h2>
-      <p>Here are some direct recordings of my improvised performances:</p>
-      <div class="bg-center bg-cover shadow-darken py4 px2 blue" style="background-image: url(images/keyboard.jpg)">
-        <p class="p">{{ playlist.user.username }}</p>
-        <h1 class="h1">{{ playlist.title }}</h1>
-        <div class="clearfix">
-          <div class="left mr1 mobile-block">
-            <a href="" ng-click="player.previous(playlist)" class="button button-geo white">
-              <span class="geomicon fill-white" data-id="previous"></span>
-            </a>
-            <a href="" ng-click="player.playPlaylist(playlist)" ng-hide="player.tracks == playlist.tracks && player.playing" class="button button-geo anim-popin">
-              <span class="geomicon fill-white" data-id="play"></span>
-            </a>
-            <a href="" ng-click="player.pause()" ng-show="player.tracks == playlist.tracks && player.playing" class="button button-geo white anim-popin">
-              <span class="geomicon fill-white" data-id="pause"></span>
-            </a>
-            <a href="" ng-click="player.next(playlist)" class="button button-geo white">
-              <span class="geomicon fill-white" data-id="next"></span>
-            </a>
-          </div>
-          <div class="oh">
-            <progress value='{{ "{{ currentTime / duration "}} }}' ng-click="seekTo($event)" class="progress-blue-on-white full-width bg-light-gray">{{ "{{ currentTime / duration "}} }}</progress>
-            <small class="left">{{ currentTime | playTime }}</small>
-            <small class="right">{{ duration | playTime }}</small>
-          </div>
-        </div>
-      </div>
-      <div class="clearfix">
-        <ol class="bg-blue p3">
-          <li ng-repeat="track in playlist.tracks" class="ml2 mb1"><a href="" ng-click="player.play(playlist.tracks, $index)" class="block white" ng-class="{ 'white': (player.playing || player.paused) != track, 'dark-gray': (player.playing || player.paused) == track }">
-            <strong>{{ "{{ track.user.username ""}} }}</strong> - {{ "{{ track.title "}} }}
-          </a></li>
-        </ol>
-        <a ng-href="{{ playlist.permalink_url }}" target="_blank" class="right small mid-gray">View on SoundCloud</a>
-      </div>
-    </div>
-  </section>
 
+  <section class="bg-dark-gray white">
 
-  <section plangular data-src="http://soundcloud.com/kindohm/sets/tidal-patterns">
-    <div class="container py4">
-      <h2 class="h2">Live Coding Patterns</h2>
-      <p>In 2014, I'm making a sound pattern a day with <a href="//yaxu.org/tidal">Tidal</a>, a live-coding language. Listen:</p>
-      <div class="bg-center bg-cover shadow-darken py4 px2 dark-gray" style="background-image: url(images/think.jpg)">
-        <p class="p">{{ playlist.user.username }}</p>
-        <h1 class="h1">{{ playlist.title }}</h1>
-        <div class="clearfix">
-          <div class="left mr1 mobile-block">
-            <a href="" ng-click="player.previous(playlist)" class="button button-geo white">
-              <span class="geomicon fill-white" data-id="previous"></span>
-            </a>
-            <a href="" ng-click="player.playPlaylist(playlist)" ng-hide="player.tracks == playlist.tracks && player.playing" class="button button-geo anim-popin">
-              <span class="geomicon fill-white" data-id="play"></span>
-            </a>
-            <a href="" ng-click="player.pause()" ng-show="player.tracks == playlist.tracks && player.playing" class="button button-geo white anim-popin">
-              <span class="geomicon fill-white" data-id="pause"></span>
-            </a>
-            <a href="" ng-click="player.next(playlist)" class="button button-geo white">
-              <span class="geomicon fill-white" data-id="next"></span>
-            </a>
-          </div>
-          <div class="oh">
-            <progress value='{{ "{{ currentTime / duration "}} }}' ng-click="seekTo($event)" class="progress-blue-on-white full-width bg-light-gray">{{ "{{ currentTime / duration "}} }}</progress>
-            <small class="left">{{ currentTime | playTime }}</small>
-            <small class="right">{{ duration | playTime }}</small>
-          </div>
-        </div>
-      </div>
-      <!-- xxx -->
-      <div class="clearfix">
-        <ol class="bg-light-gray p3">
-          <li ng-repeat="track in playlist.tracks" class="ml2 mb1"><a href="" ng-click="player.play(playlist.tracks, $index)" class="block dark-gray" ng-class="{ 'white': (player.playing || player.paused) != track, 'blue': (player.playing || player.paused) == track }">
-            <strong>{{ "{{ track.user.username ""}} }}</strong> - {{ "{{ track.title "}} }}
-          </a></li>
-        </ol>
-        <a ng-href="{{ playlist.permalink_url }}" target="_blank" class="right small mid-gray">View on SoundCloud</a>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="bg-dark-gray white p4">
-
-    <div class="container center">
-      <h2 class="h2">Oh yeah, programming too</h2>
+    <div class="container">
+      <h2>Oh yeah, programming too</h2>
       <p>I'm an independent, full-stack web developer. I work with open-source technologies on
         front-end, .NET, and node.js stacks.</p>
       <a href="//linkedin.com/in/michaelhodnick" class="p">Profile on LinkedIn</a>
@@ -170,9 +100,9 @@ layout: layout
 
   </section>
 
-  <section class="bg-light-gray p4">
+  <section class="bg-light-gray">
     <div class="container center">
-      <h2 class="h2">Blog</h2>
+      <h2>Blog</h2>
       <p>I maintain a technical blog. I write about live coding and web programming.</p>
       <a href="/blog.html" class="p">Read the Blog</a>
     </div>
@@ -181,7 +111,7 @@ layout: layout
   <section class="p4">
     <div class="container center">
       <a name="contact"></a>
-      <h2 class="h2">Contact Me</h2>
+      <h2>Contact Me</h2>
       <p>You can reach me on a variety of services, or through the handy contact form below.</p>
       <a href="http://facebook.com/mike.hodnick" class="p">Facebook</a>
       <a href="https://plus.google.com/100816691627215949415">Google+</a>

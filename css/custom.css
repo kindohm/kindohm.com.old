@@ -8,24 +8,6 @@ body{
   padding-right: 0.5rem;
 }
 
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 30px; 
-    height: 0; 
-    overflow: hidden;
-}
- 
-.video-container iframe,
-.video-container object,
-.video-container embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
 .shadow-darken {
 	box-shadow: inset 0 -32px 192px rgba(0,0,0,0.9);
 }
@@ -130,3 +112,17 @@ top: 0;
 
 .progress-blue-on-white::-webkit-progress-value{background-color:#0096cc}
 .progress-blue-on-white::-webkit-progress-bar{background-color:rgba(255,255,255,0.4)}
+
+
+@media (min-width: 52em){
+  .md-h1 {
+  font-size: 3rem;
+  }
+}
+
+@media (min-width: 64em){
+  .lg-h1 {
+  font-size: 4rem;
+  }
+}
+
