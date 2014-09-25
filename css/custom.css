@@ -128,12 +128,12 @@ progress::-webkit-progress-bar {
     -webkit-appearance:none;
 
     /* webkit bg color */
-    background-color: yellow;
+    background-color: #ccc;
 }  
 progress::-webkit-progress-value {  
     -webkit-appearance:none;
     /* webkit foreground color */
-    background-color: purple;
+    background-color: #304650;
     
 }  
 progress::-moz-progress-bar {  
@@ -143,7 +143,6 @@ progress::-moz-progress-bar {
 }  
 
 button, .button {
-font-family: inherit;
 font-weight: 500;
 letter-spacing: 0.1em;
 line-height: 2.5em;

@@ -2,49 +2,36 @@
 layout: layout
 ---
 <div>
-  <section>
+  <section class="mb4">
     <div class="container">
-      <h2>Live Coding</h2>
-      <p>I write code live to make improvised electronic music. I project my screen as I perform.</p>
+      <h2 class="caps">Live Coding</h2>
+      <p class="h3 mb3">I write code live to make improvised electronic music. I project my screen as I perform.</p>
 
 
-  <div plangular="https://soundcloud.com/kindohm/bedlam-2014-09-10-03" class="bg-darken-2 p1">
-    
-    <div class="clearfix">
-      <div class="col col-1 p1">
-        <button ng-click="play()" ng-if="player.playing != track" class="button-icon dark-gray"><span class="js-geomicon geomicon" data-icon="play"></span></button>
-        <button ng-click="pause()" ng-if="player.playing == track" class="js-geomicon geomicon fill-dark button-icon" data-icon="pause"></button>
-      </div>
-      <div class="col col-11 px1">
-        <p class="caps">{{ "{{ track.title "}} }}</p>
-        <progress style="width: 100%;" value='{{ "{{ currentTime / duration || 0 "}} }}'>{{ "{{ currentTime / duration "}} }}</progress>
-      </div>
-    </div>
-  </div>
+      <section plangular="https://soundcloud.com/kindohm/bedlam-2014-09-10-03" class="bg-darken-2 p1 mb4">
+        <div class="clearfix">
+          <div class="col col-1 p1">
+            <button ng-click="play()" ng-if="player.playing != track" class="button-icon dark-gray"><span class="js-geomicon geomicon" data-icon="play"></span></button>
+            <button ng-click="pause()" ng-if="player.playing == track" class="button-icon dark-gray"><span class="js-geomicon geomicon" data-icon="pause"></span></button>
+          </div>
+          <div class="col col-11 px1">
+            <p class="caps">Live @ Bedlam Lowertown, 2014-09-10</p>
+            <progress style="width: 100%;" value='{{ "{{ currentTime / duration || 0 "}} }}'>{{ "{{ currentTime / duration "}} }}</progress>
+          </div>
+        </div>
+      </section>      
 
+      <p><img src="/images/bedlam-bw-crop.jpg" alt="Live Coding" /></p>
 
-
-    </div>
-  </section>
-
-  <section class="bg-light-gray">
-    <div class="container">
-      <h2>What is live-coded, algorithmic music?</h2>
-      <p class="p">Live coders are hybrid programmer-musicians who write improvised code
-        in real time to create music. They project their screen to the audience, resuling in a raw and genuine musical
-        performance.</p>
-      <p>No turn-key DJ software. No hiding behind tools. <em>Just code</em>.</p>
-      <p>Because of the algorithmic nature of live coding programming languages, live-coded music sometimes
-        has an algorithmic feel. The live coder breathes creativity into code and then lets go as the computer
-        makes sound. This mechanical freedom is often short-lived as the code continuously changes.</p>
     </div>
   </section>
 
-  <section>
-    <div class="container">
-      <h2>Upcoming Events</h2>
 
-      <table>
+  <section class="mb4">
+    <div class="container">
+      <h2 class="caps">Upcoming Events</h2>
+
+      <table class="table-light mb3">
         <thead>
           <tr>
             <th>Date</th>
@@ -60,6 +47,12 @@ layout: layout
               <td>St. Paul Art Crawl / Tilsner Building</td>
               <td>TBA</td>
             </tr>
+            <tr>
+              <td>Jan 23, 2015</td>
+              <td>7:30 PM</td>
+              <td>Teatro @ Zeitgeist Arts, Duluth, MN</td>
+              <td>TBA</td>
+            </tr>
           </tbody>
         </table>
 
@@ -67,9 +60,10 @@ layout: layout
     </div>
   </section>
 
-  <section class="bg-dark-gray white">
-    <div class="container py4 center">
-      <h2>Press and Praise</h2>
+  <section class="mb4">
+    <div class="container">
+      <h2 class="caps">Press and Praise</h2>
+
       <p>Perfect Porridge: 
         <a href="http://perfectporridge.com/2014/05/28/livecodedaudio/">Decoding Algoraves: 
           Live Coded Audio coming to Minneapolis</a>.</p>
@@ -78,21 +72,26 @@ layout: layout
         <a href="http://sdt.bz/content/article.aspx?ArticleID=70098&page=1">Algoraves: 
           Dancing to live coding</a></p>
 
-      <div>
-        <p><em>"was super rad and a lot of folks dug it"</em><br/>
-          - <a href="http://bedlamtheatre.org/bedlam-lowertown/">Bedlam Lowertown</a></p>
+      <blockquote><em>"was super rad and a lot of folks dug it"</em><br/>
+        - <a href="http://bedlamtheatre.org/bedlam-lowertown/">Bedlam Lowertown</a></blockquote>
 
-        <p><em>"sick beats dude"</em><br/>
-          - Jim Ready on <a href="https://soundcloud.com/kindohm/live-coding-run-20140703/comment-191496462">soundcloud</a></p>
+      <blockquote><em>"sick beats dude"</em><br/>
+        - Jim Ready on <a href="https://soundcloud.com/kindohm/live-coding-run-20140703/comment-191496462">soundcloud</a></blockquote>
 
-        <p><em>"that was mind blowing"</em><br/>
-          - The Sound Guy</p>
-      </div>
+      <blockquote><em>"that was mind blowing"</em><br/>
+        - The Sound Guy</blockquote>
     </div>
   </section>
 
+  <section class="mb4">
+    <div class="container">
+      <h2 class="caps">Booking</h2>
+      <p>Contact me about performing live or speaking at your event.</p>
+      <p><a class="button" href="mailto:kindohm@gmail.com">Contact Me</a></p>
+    </div>
+  </section>
 
-  <section class="bg-dark-gray white">
+  <section class="mb4">
 
     <div class="container">
       <h2>Oh yeah, programming too</h2>
