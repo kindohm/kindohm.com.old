@@ -84,8 +84,11 @@ top: 0;
 }
 
 
-/* Alternatively, you can set custom sizes
- */
+.geomicon {
+  width: 2em; /* 1 */
+  height: 2em;
+  vertical-align: -0.125em; /* 2 */
+}
 .geomicon-mid  { width: 4rem; height: 4rem; }
 .geomicon-big  { width: 8rem; height: 8rem; }
 .geomicon-huge { width: 16rem; height: 16rem; }
@@ -99,21 +102,6 @@ top: 0;
 .fill-dark  { fill: #333; }
 .fill-blue  { fill: #0cf; }
 
-.progress-thin{height:2px;margin-top:23px}.progress{width:100%;-webkit-appearance:none}
-.progress::-webkit-progress-bar{-webkit-appearance:none;background-color:#eee}
-.progress::-webkit-progress-value{-webkit-appearance:none}
-.progress-gray::-webkit-progress-value{background-color:#999}
-.progress-gray-alt::-webkit-progress-bar{background-color:#ddd}
-.progress-white::-webkit-progress-value{background-color:#fff}
-.progress-white::-webkit-progress-bar{background-color:rgba(255,255,255,0.4)}
-.progress-link::-webkit-progress-value{background-color:#0cf}
-.progress-green::-webkit-progress-value{background-color:#0c5}
-.progress-white-bg::-webkit-progress-bar{background-color:#fff}
-
-.progress-blue-on-white::-webkit-progress-value{background-color:#0096cc}
-.progress-blue-on-white::-webkit-progress-bar{background-color:rgba(255,255,255,0.4)}
-
-
 @media (min-width: 52em){
   .md-h1 {
   font-size: 3rem;
@@ -126,3 +114,54 @@ top: 0;
   }
 }
 
+progress {  
+    /* style rules */  
+    -webkit-appearance:none;
+    
+    /* firefox background */
+    background-color: orange;
+
+}  
+
+progress::-webkit-progress-bar {  
+    /* style rules */  
+    -webkit-appearance:none;
+
+    /* webkit bg color */
+    background-color: yellow;
+}  
+progress::-webkit-progress-value {  
+    -webkit-appearance:none;
+    /* webkit foreground color */
+    background-color: purple;
+    
+}  
+progress::-moz-progress-bar {  
+    /* style rules */  
+    /* firefox foreground */
+    background-color: purple;
+}  
+
+button, .button {
+font-family: inherit;
+font-weight: 500;
+letter-spacing: 0.1em;
+line-height: 2.5em;
+text-decoration: none;
+display: inline-block;
+background-color: transparent;
+border: 0;
+padding-top: 10px;
+border-radius: 3px;
+-webkit-transition-property: color, background-color, box-shadow, -webkit-transform;
+transition-property: color, background-color, box-shadow, transform;
+-webkit-transition-duration: 0.1s;
+transition-duration: 0.1s;
+-webkit-transition-timing-function: ease-out;
+transition-timing-function: ease-out;
+cursor: pointer;
+}
+
+.button-icon:hover{
+  background: rgba(0,0,0,0.06);
+}

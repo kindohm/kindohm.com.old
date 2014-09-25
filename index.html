@@ -8,15 +8,18 @@ layout: layout
       <p>I write code live to make improvised electronic music. I project my screen as I perform.</p>
 
 
-  <div plangular="https://soundcloud.com/365tidalpatterns/pattern-364">
+  <div plangular="https://soundcloud.com/kindohm/bedlam-2014-09-10-03" class="bg-darken-2 p1">
     
-    <h1>{{ "{{user.username "}} }}</h1>
-    <h1>{{ "{{ title "}} }}</h1>
-    <button ng-click="play()" ng-if="player.playing != track">Play</button>
-    <button ng-click="pause()" ng-if="player.playing == track">Pause</button>
-    <div>
-<progress style="width: 100%;background-color: black;color: green;" value="{{ currentTime / duration }}">{{ "{{ currentTime / duration "}} }}</progress>
-</div>
+    <div class="clearfix">
+      <div class="col col-1 p1">
+        <button ng-click="play()" ng-if="player.playing != track" class="button-icon dark-gray"><span class="js-geomicon geomicon" data-icon="play"></span></button>
+        <button ng-click="pause()" ng-if="player.playing == track" class="js-geomicon geomicon fill-dark button-icon" data-icon="pause"></button>
+      </div>
+      <div class="col col-11 px1">
+        <p class="caps">{{ "{{ track.title "}} }}</p>
+        <progress style="width: 100%;" value='{{ "{{ currentTime / duration || 0 "}} }}'>{{ "{{ currentTime / duration "}} }}</progress>
+      </div>
+    </div>
   </div>
 
 
