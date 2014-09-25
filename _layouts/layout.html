@@ -2,13 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Mike Hodnick - live coded music</title>
+  <title>Mike Hodnick - kindohm.com</title>
   <meta name="description" content="Mike Hodnick - live coded music and web programming">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="icon" href="favicon.png" />
-  <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png" />
-  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro:400|Open+Sans:400,400italic,600" rel="stylesheet">
   <link rel="stylesheet" href="/css/basscss.min.css?v=2"/>
   <link rel="stylesheet" href="/css/custom.css?v=2"/>
 </head>
@@ -17,7 +13,7 @@
 <header>
   <div class="bg-dark-gray shadow-darkener">
     <div class="container white pt3 pb3">
-      <h1 class="md-h1 lg-h1 caps">kindohm</h1>
+      <h1 class="md-h1 lg-h1 caps regular">kindohm</h1>
       <div class="md-table">
         <div class="md-table-cell">
           <h2 class="h4 mb0 caps">Mike Hodnick</h2>
@@ -49,12 +45,14 @@
 </footer>
 
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
-<script src="http://d2v52k3cl9vedd.cloudfront.net/plangular/2.0-beta-1/ng-plangular.min.js"></script>
-<script src="http://d2v52k3cl9vedd.cloudfront.net/geomicons/0.2.0/geomicons.min.js"></script>
+<script src="//d2v52k3cl9vedd.cloudfront.net/plangular/2.0-beta-1/ng-plangular.min.js"></script>
+<script src="//d2v52k3cl9vedd.cloudfront.net/geomicons/0.2.0/geomicons.min.js"></script>
 
 <script>
+(function(){
   var icons = document.querySelectorAll('.js-geomicon');
   Geomicons.inject(icons);
+})();
 </script>
 
 </body>

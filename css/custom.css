@@ -68,12 +68,6 @@ body{
     padding-bottom: 4rem;
 }
 
-.geomicon {
-  width: 2em; /* 1 */
-  height: 2em;
-  vertical-align: -0.125em; /* 2 */
-}
-
 .l0 {
 left: 0;
 }
@@ -92,6 +86,8 @@ top: 0;
   width: 2em; /* 1 */
   height: 2em;
   vertical-align: -0.125em; /* 2 */
+}
+.geomicon-xs  { width: 0.5rem; height: 0.5rem;   vertical-align: 0.125em;
 }
 .geomicon-sm  { width: 1rem; height: 1rem; }
 .geomicon-mid  { width: 4rem; height: 4rem; }
