@@ -1,22 +1,22 @@
 ---
 layout: layout
 ---
-<div>
-  <section class="mb4">
+<div ng-app="plangular">
+  <section class="mb4 mt3">
     <div class="container">
       <h2 class="caps">Live Coding</h2>
       <p class="h3 mb3">I write code live to make improvised electronic music. I project my screen as I perform.</p>
 
 
-      <section plangular="https://soundcloud.com/kindohm/bedlam-2014-09-10-03" class="bg-darken-2 p1 mb4">
+      <section plangular="https://soundcloud.com/kindohm/bedlam-2014-09-10-03" class="bg-darken-2 shadow-darken-less p1 mb4">
         <div class="clearfix">
-          <div class="col col-1 p1">
+          <div class="sm-col sm-col-2 md-col-1 lg-col-1 p1">
             <button ng-click="play()" ng-if="player.playing != track" class="button-icon dark-gray"><span class="js-geomicon geomicon" data-icon="play"></span></button>
             <button ng-click="pause()" ng-if="player.playing == track" class="button-icon dark-gray"><span class="js-geomicon geomicon" data-icon="pause"></span></button>
           </div>
-          <div class="col col-11 px1">
+          <div class="sm-col sm-col-10 md-col-11 lg-col-11 px1">
             <p class="caps">Live @ Bedlam Lowertown, 2014-09-10</p>
-            <progress style="width: 100%;" value='{{ "{{ currentTime / duration || 0 "}} }}'>{{ "{{ currentTime / duration "}} }}</progress>
+            <progress style="width: 100%;" value='{{ "{{ currentTime / duration || 0 "}} }}' ng-click="seek($event)">{{ "{{ currentTime / duration "}} }}</progress>
           </div>
         </div>
       </section>      
@@ -87,41 +87,28 @@ layout: layout
     <div class="container">
       <h2 class="caps">Booking</h2>
       <p>Contact me about performing live or speaking at your event.</p>
-      <p><a class="button" href="mailto:kindohm@gmail.com">Contact Me</a></p>
+      <p><a href="mailto:kindohm@gmail.com" class="button button-blue-outline">Contact Me</a></p>
     </div>
   </section>
 
   <section class="mb4">
 
     <div class="container">
-      <h2>Oh yeah, programming too</h2>
-      <p>I'm an independent, full-stack web developer. I work with open-source technologies on
-        front-end, .NET, and node.js stacks.</p>
-      <a href="//linkedin.com/in/michaelhodnick" class="p">Profile on LinkedIn</a>
+      <h2 class="caps">Independent Software Development</h2>
+      <p>I'm an independent, full-stack web, mobile, and enterprise developer. I work with open source and .NET
+        development technologies and have over 15 years of experience.</p>
+      <p><a href="//linkedin.com/in/michaelhodnick" class="button button-blue-outline">LinkedIn</a>
+        <a href="//github.com/kindohm" class="button button-blue-outline">Github</a></p>
     </div>
 
   </section>
 
-  <section class="bg-light-gray">
-    <div class="container center">
-      <h2>Blog</h2>
+  <section class="mb4">
+    <div class="container">
+      <h2 class="caps">Blog</h2>
       <p>I maintain a technical blog. I write about live coding and web programming.</p>
-      <a href="/blog.html" class="p">Read the Blog</a>
+      <a href="/blog.html" class="button button-blue-outline">Read the Blog</a>
     </div>
   </section>
 
-  <section class="p4">
-    <div class="container center">
-      <a name="contact"></a>
-      <h2>Contact Me</h2>
-      <p>You can reach me on a variety of services, or through the handy contact form below.</p>
-      <a href="http://facebook.com/mike.hodnick" class="p">Facebook</a>
-      <a href="https://plus.google.com/100816691627215949415">Google+</a>
-      <a href="http://twitter.com/kindohm" class="p">Twitter</a>
-      <a href="http://github.com/kindohm" class="p">Github</a>
-      <a href="http://soundcloud.com/kindohm" class="p">Soundcloud</a>
-
-      <script src="http://www.emailmeform.com/builder/forms/jsform/08dacv1jcTCI" type="text/javascript"> </script>
-    </div>
-  </section>
 </div>
